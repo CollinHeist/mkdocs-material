@@ -35,6 +35,7 @@ import concurrent.futures
 import functools
 import logging
 import os
+from pathlib import Path
 import posixpath
 import re
 import requests
@@ -229,17 +230,6 @@ class SocialPlugin(BasePlugin[SocialConfig]):
     def _render_card(self, site_name, title, description):
         # Render background and logo
         image = self._render_card_background((1200, 630), self.color["fill"])
-        image.alpha_composite(
-            self._resized_logo_promise.result(),
-            (1200 - 228, 64 - 4)
-        )
-
-        # Render site name
-        font = self._get_font("Bold", 36)
-        image.alpha_composite(
-            self._render_text((826, 48), font, site_name, 1, 20),
-            (64 + 4, 64)
-        )
 
         # Render page title
         font = self._get_font("Bold", 92)
@@ -260,7 +250,7 @@ class SocialPlugin(BasePlugin[SocialConfig]):
 
     # Render social card background
     def _render_card_background(self, size, fill):
-        return Image.new(mode = "RGBA", size = size, color = fill)
+        return Image.open(Path(__file__).parent.parent.parent.parent / 'base.webp')
 
     @functools.lru_cache(maxsize=None)
     def _tmp_context(self):
