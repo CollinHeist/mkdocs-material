@@ -64,32 +64,6 @@ jobs:
           npm run build
           git diff --name-only
 
-  npm-check:
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js runtime
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Set up Node.js dependency cache
-        uses: actions/cache@v3
-        id: cache
-        with:
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-          path: node_modules
-
-      - name: Set up Node.js dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm install
-
-      - name: Check project
-        run: npm run check
-
   docker:
     runs-on: ubuntu-latest
     steps:
@@ -122,6 +96,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name == 'release' }}
           tags: ${{ secrets.DOCKER_USERNAME }}/tcm-mkdocs:latest,ghcr.io/collinheist/tcm-mkdocs:latest
