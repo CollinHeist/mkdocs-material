@@ -230,6 +230,8 @@ class SocialPlugin(BasePlugin[SocialConfig]):
     def _render_card(self, site_name, title, description):
         # Render background and logo
         image = self._render_card_background((1200, 630), self.color["fill"])
+        log = logging.getLogger("mkdocs")
+        log.critical(f'Opened base image {image=}')
 
         # Render page title
         font = self._get_font("Bold", 92)
