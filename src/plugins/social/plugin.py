@@ -250,7 +250,7 @@ class SocialPlugin(BasePlugin[SocialConfig]):
 
     # Render social card background
     def _render_card_background(self, size, fill):
-        return Image.open(Path(__file__).parent.parent.parent.parent / 'base.webp')
+        return Image.open(Path(__file__).parent / 'base.png').convert('RGBA')
 
     @functools.lru_cache(maxsize=None)
     def _tmp_context(self):

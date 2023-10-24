@@ -90,6 +90,8 @@ RUN git config --global --add safe.directory /docs &&\
     git config --global --add safe.directory /site
 
 # Set working directory
+COPY src/plugins/social/plugin.py ${PACKAGES}/material/plugins/social/plugin.py
+COPY base.png ${PACKAGES}/material/plugins/social/base.png
 WORKDIR /docs
 
 # Expose MkDocs development server port
