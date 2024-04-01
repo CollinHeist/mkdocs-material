@@ -2,6 +2,165 @@
 
 ## Material for MkDocs
 
+### 9.5.16 <small>March 31, 2024</small> { id="9.5.16" }
+
+- Updated Russian translations
+- Improved error handling and reporting in social plugin
+- Improved error handling and reporting in privacy plugin
+- Fixed blog plugin not allowing to use time in format strings
+- Fixed #6983: Social plugin crashes because of Google Fonts API change
+
+### 9.5.15 <small>March 23, 2024</small> { id="9.5.15" }
+
+- Reverted fix for transparent iframes (9.5.14)
+- Fixed #6929: Interference of social plugin and auto dark mode
+- Fixed #6938: Giscus shows dark background in light mode (9.5.14 regression)
+
+### 9.5.14 <small>March 18, 2024</small> { id="9.5.14" }
+
+- Added support for hiding versions from selector when using mike
+- Added init system to improve signal handling in Docker image
+- Fixed edge cases in exclusion logic of info plugin
+- Fixed inability to reset pipeline in search plugin
+- Fixed syntax error in Finnish translations
+- Fixed #6917: UTF-8 encoding problems in blog plugin on Windows
+- Fixed #6889: Transparent iframes get background color
+
+### 9.5.13 <small>March 6, 2024</small> { id="9.5.13" }
+
+- Updated Slovak translations
+- Improved info plugin interop with projects plugin
+- Improved info plugin inclusion/exclusion logic
+- Fixed info plugin not gathering files recursively
+- Fixed #6750: Ensure info plugin packs up all necessary files
+
+### 9.5.12 <small>February 29, 2024</small> { id="9.5.12" }
+
+- Fixed #6846: Some meta tags removed on instant navigation (9.4.2 regression)
+- Fixed #6823: KaTex not rendering on instant navigation (9.5.5 regression)
+- Fixed #6821: Privacy plugin doesn't handle URLs with encoded characters
+
+### 9.5.11 <small>February 24, 2024</small> { id="9.5.11" }
+
+- Updated Finnish translation
+
+### 9.5.10 <small>February 19, 2024</small> { id="9.5.10" }
+
+- Updated Bahasa Malaysia translations
+- Fixed #6783: Hide continue reading link for blog posts without separators
+- Fixed #6779: Incorrect positioning of integrated table of contents
+
+### 9.5.9 <small>February 10, 2024</small> { id="9.5.9" }
+
+- Fixed navigation pruning with tabs and sections enabled
+
+### 9.5.8 <small>February 7, 2024</small> { id="9.5.8" }
+
+- Added Tamil translations
+- Updated Esperanto translations
+- Fixed relative images not being resolved for instant navigation
+
+### 9.5.7 <small>February 3, 2024</small> { id="9.5.7" }
+
+- Fixed #6731: Small images in figures are not centered
+- Fixed #6719: Instant navigation breaks table of contents (9.5.5 regression)
+
+### 9.5.6 <small>January 28, 2024</small> { id="9.5.6" }
+
+- Fixed #6700: Missing styles for Mermaid.js labels with Markdown
+
+### 9.5.5 <small>January 24, 2024</small> { id="9.5.5" }
+
+- Updated Tagalog translations
+- Updated Pillow to 10.2 to mitigate security vulnerabilities
+- Improved resilience of instant navigation
+- Fixed #6687: Updated Mermaid.js to version 10.7.0 (latest)
+- Fixed #6652: Keyboard events in custom elements captured
+- Fixed #6582: Instant navigation doesn't correctly handle alternate URLs
+- Fixed #6565: Instant navigation doesn't allow for `onclick` handlers
+- Fixed #6345: Instant navigation sometimes breaks browser back button
+- Fixed #6334: Instant navigation doesn't correctly position anchors (Safari)
+- Fixed #6275: Instant navigation doesn't correctly resolve after 404
+- Fixed #6102: Instant navigation reloads page on same link navigation
+
+### 9.5.4 <small>January 15, 2024</small> { id="9.5.4" }
+
+- Fixed #6645: Local storage with invalid value can break site
+- Fixed #6635: Tags icons before default ignored if default is set
+
+### 9.5.3 <small>December 23, 2023</small> { id="9.5.3" }
+
+- Limited version range of MkDocs to < 1.6
+- Updated Macedonian translations
+- Fixed #6520: Group plugin crashes when using mike
+- Fixed #6494: Hide author's email address if disabled in git-authors plugin
+
+### 9.5.2 <small>December 11, 2023</small> { id="9.5.2" }
+
+- Fixed types for `slugify` settings in blog plugin config
+- Fixed #6469: Horizontal scrollbars on MathJax containers
+
+### 9.5.1 <small>December 8, 2023</small> { id="9.5.1" }
+
+- Updated Greek translations
+- Fixed #6464: Privacy plugin cannot be enabled
+- Fixed #6461: Sorting blog posts ignores time component in date
+
+### 9.5.0 <small>December 7, 2023</small> { id="9.5.0" }
+
+Merged Insiders features of 'Goat's Horn' funding goal
+
+- Added privacy plugin: automatic downloading of external assets
+- Added support for card grids and grid layouts
+- Added support for improved tooltips
+- Added support for content tabs anchor links (deep linking)
+- Added support for automatic dark/light mode
+- Added support for document contributors
+
+### 9.4.14 <small>November 26, 2023</small> { id="9.4.14" }
+
+- Added support for linking authors in blog posts
+
+### 9.4.13 <small>November 26, 2023</small> { id="9.4.13" }
+
+- Fixed #6365: Blog plugin pagination links to previous pages broken
+- Fixed #5758: Updated Mermaid.js to version 10.6.1 (latest)
+
+### 9.4.12 <small>November 24, 2023</small> { id="9.4.12" }
+
+- Improved blog plugin to generate Unicode-aware slugs by default
+- Fixed non-deterministic order of categories in blog plugin
+
+### 9.4.11 <small>November 23, 2023</small> { id="9.4.11" }
+
+- Fixed #6364: Search plugin crashing when enabling theme while serving
+- Fixed blog plugin crashing when disabling pagination
+
+### 9.4.10 <small>November 19, 2023</small> { id="9.4.10" }
+
+- Fixed #6356: Version selector can't be disabled via mike's configuration
+- Fixed #6281: Navigation not rendering due to Safari bug (9.4.2 regression)
+- Fixed #6261: Navigation expansion animates on first load (9.4.2 regression)
+
+### 9.4.9 <small>November 17, 2023</small> { id="9.4.9" }
+
+- Fixed #6344: Long entries cutoff in table of contents
+- Fixed #6336: Custom template for glob archive not working with pagination
+- Fixed #6328: Blog plugin crashes for locales with dashes, e.g. `pt-BR`
+- Fixed #6327: Copy-to-clipboard button doesn't trim trailing line feed
+- Fixed #6302: Version strings not matched when using mike, only aliases
+- Fixed instant navigation progress indicator for gzipped content in Chrome
+- Fixed rendering bug on details marker rotation in Firefox
+
+### 9.4.8 <small>November 5, 2023</small> { id="9.4.8" }
+
+- Fixed invalid local address replacement when using instant loading
+- Fixed #6275: Crash after navigation caused 404 when using instant loading
+
+### 9.4.7 <small>October 27, 2023</small> { id="9.4.7" }
+
+- Added Azerbaijani translations
+
 ### 9.4.6 <small>October 14, 2023</small> { id="9.4.6" }
 
 - Updated Danish and Norwegian (Nynorsk) translations

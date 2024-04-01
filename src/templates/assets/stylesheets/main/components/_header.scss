@@ -1,5 +1,5 @@
 ////
-/// Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+/// Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a
 /// copy of this software and associated documentation files (the "Software"),
@@ -182,8 +182,7 @@
   &__title {
     flex-grow: 1;
     height: px2rem(48px);
-    margin-inline-start: px2rem(20px);
-    margin-inline-end: px2rem(8px);
+    margin-inline: px2rem(20px) px2rem(8px);
     font-size: px2rem(18px);
     line-height: px2rem(48px);
 

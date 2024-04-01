@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+ * Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to
@@ -28,12 +28,20 @@ import { h } from "~/utilities"
  * ------------------------------------------------------------------------- */
 
 /**
+ * Version properties
+ */
+export interface VersionProperties {
+  hidden?: boolean                     /* Version is hidden */
+}
+
+/**
  * Version
  */
 export interface Version {
   version: string                      /* Version identifier */
   title: string                        /* Version title */
   aliases: string[]                    /* Version aliases */
+  properties?: VersionProperties       /* Version properties */
 }
 
 /* ----------------------------------------------------------------------------
@@ -76,6 +84,7 @@ function renderVersion(version: Version): HTMLElement {
 export function renderVersionSelector(
   versions: Version[], active: Version
 ): HTMLElement {
+  versions = versions.filter(version => !version.properties?.hidden)
   return (
     <div class="md-version">
       <button

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+ * Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to
@@ -134,7 +134,7 @@ export function setupVersionSelector(
                 map(sitemap => {
                   const location = getLocation()
                   const path = location.href.replace(config.base, "")
-                  return sitemap.includes(path.split("#")[0])
+                  return sitemap.has(path.split("#")[0])
                     ? new URL(`../${version}/${path}`, config.base)
                     : new URL(url)
                 })
@@ -168,8 +168,8 @@ export function setupVersionSelector(
 
         /* Check if version is considered a default */
         main: for (const ignore of ignored)
-          for (const alias of current.aliases)
-            if (new RegExp(ignore, "i").test(alias)) {
+          for (const version of current.aliases.concat(current.version))
+            if (new RegExp(ignore, "i").test(version)) {
               outdated = false
               break main
             }
